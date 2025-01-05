@@ -1,3 +1,5 @@
+NOT SECURE lolz
+
 - Update apt:
   ```bash
   sudo apt update
