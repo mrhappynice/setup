@@ -29,8 +29,9 @@ mkdir -p ~/alpine-linux && cd ~/alpine-linux
 Download the latest Alpine Linux virtual ISO image suitable for x86_64 architecture:
 
 ```bash
-wget https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/x86_64/alpine-virt-latest-x86_64.iso -O alpine.iso
+wget https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/x86_64/alpine-virt-3.21.0-x86_64.iso -O alpine.iso
 ```
+Check current version numbers and change
 
 **5. Create a Virtual Disk Image:**
 
