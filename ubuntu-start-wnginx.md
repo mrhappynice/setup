@@ -35,7 +35,7 @@
   ```
   finish:
   ```bash
-  sudo ln -s /etc/nginx/sites-available/gradio /etc/nginx/sites-enabled/
+  sudo ln -s /etc/nginx/sites-available/da_app /etc/nginx/sites-enabled/
   sudo nginx -t
   sudo systemctl reload nginx
   ```
