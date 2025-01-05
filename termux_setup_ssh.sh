@@ -29,6 +29,6 @@ sshd
 
 # Display the device's IP address
 echo "Your device's IP addresses are:"
-ip a | grep 'inet ' | awk '{print $2}'
+ifconfig | grep 'inet ' | awk '{print $2}'
 echo "You can connect via SSH using: ssh -p 8022 username@device_ip"
 
