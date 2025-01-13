@@ -1,5 +1,5 @@
 # Cool Scripts
 
-Currently playing with Termux setups.
+Yeah yeah, I'll organize one day...
 
 
