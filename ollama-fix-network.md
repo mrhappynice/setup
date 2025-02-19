@@ -98,3 +98,41 @@ Replace `<your-computer-ip>` with the IP address of the machine running Ollama.
 Exposing Ollama on your local network can have security implications. Ensure that your network is secure and consider implementing additional security measures, such as setting up a reverse proxy with authentication, to control access.
 
 By following these steps, you should be able to run Ollama on your local network, making it accessible to other devices. 
+
+---
+---
+---
+On Linux  
+
+Edit the ollama.service using the following command  
+
+sudo systemctl edit ollama.service  
+
+Add the following environment variables  
+
+[Service]
+Environment="OLLAMA_HOST=0.0.0.0"  
+Environment="OLLAMA_ORIGINS=*"
+
+Then restart the ollama service
+
+sudo service ollama restart
+
+Testing
+
+Your output should be like below if everything is setup right for Origins
+
+(base) ➜  ~ curl -X OPTIONS http://localhost:11434 -H "Origin: http://example.com" -H "Access-Control-Request-Method: GET" -I
+HTTP/1.1 204 No Content
+Access-Control-Allow-Headers: Authorization,Content-Type,User-Agent,Accept,X-Requested-With,X-Stainless-Lang,X-Stainless-Package-Version,X-Stainless-Os,X-Stainless-Arch,X-Stainless-Runtime,X-Stainless-Runtime-Version,X-Stainless-Async
+Access-Control-Allow-Methods: GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 43200
+Date: Wed, 09 Oct 2024 10:13:26 GMT
+
+to make sure binding is correct, run the following command
+
+(base) gavi@node1:~$ netstat -an |grep 11434
+tcp6       0      0 :::11434                :::*                    LISTEN
+
+As you can see the port is bound to all IPs on the machine
