@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# server.py
+# chromadb-server.py
 # Requirements: chromadb>=0.4.0, uvicorn[standard], duckdb, pyarrow,
 #               opentelemetry-api, opentelemetry-sdk, opentelemetry-instrumentation-fastapi
 
