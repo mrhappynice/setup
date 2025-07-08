@@ -1,0 +1,7 @@
+chromadb
+uvicorn[standard]
+duckdb
+pyarrow
+opentelemetry-api
+opentelemetry-sdk
+opentelemetry-instrumentation-fastapi
