@@ -1,10 +1,6 @@
-Sure thing — here’s the full, well-formatted Markdown version directly in chat:
-
 ---
 
 # Installing pyenv on Unix-like Systems (Linux and macOS)
-
-Installing **pyenv** typically involves a few steps:
 
 ---
 
