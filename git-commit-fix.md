@@ -96,6 +96,94 @@ git push --force origin main
 to overwrite them.
 
 ---
+That error —
 
-Would you like to **keep your files and just delete commit history**, or **delete everything (files and all) and re-clone clean**?
-I can tailor the exact commands for your case.
+```
+error: src refspec main does not match any
+```
+
+— means **you don’t currently have a branch named `main` locally**, or you haven’t made a commit yet (so there’s nothing to push).
+
+Let’s fix this step by step 👇
+
+---
+
+### 🧭 Step-by-Step Fix
+
+#### 1. Check your current branch name:
+
+```bash
+git branch
+```
+
+You’ll probably see something like:
+
+```
+* master
+```
+
+or maybe nothing if you haven’t committed yet.
+
+---
+
+#### 2. If you haven’t committed anything yet:
+
+You need at least one commit before pushing.
+
+```bash
+git add .
+git commit -m "Initial commit"
+```
+
+---
+
+#### 3. If your branch isn’t called `main` (e.g., it’s `master`):
+
+Rename it to `main` so it matches the remote.
+
+```bash
+git branch -M main
+```
+
+---
+
+#### 4. Add (or verify) your remote:
+
+```bash
+git remote -v
+```
+
+If it’s missing, add it:
+
+```bash
+git remote add origin https://github.com/mrhappynice/bplus-xngllamasearch.git
+```
+
+---
+
+#### 5. Now push (forcefully if you’re overwriting history):
+
+```bash
+git push --force origin main
+```
+
+---
+
+### ✅ Quick Summary of Commands to Run (safe sequence)
+
+If you just want to reset and push a clean commit:
+
+```bash
+rm -rf .git
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/mrhappynice/bplus-xngllamasearch.git
+git push -u origin main --force
+```
+
+---
+
+Would you like me to show you how to confirm that the remote branch is now clean (no previous commits) once you push?
+
